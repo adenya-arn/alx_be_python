@@ -1,7 +1,7 @@
 #Intialize the numbers
 
-number1 = int(10)
-number2 = int(5)
+number1 = 10
+number2 = 5
 #Operations to be done
 addition = number1 + number2
 subtract = number2 - number1
