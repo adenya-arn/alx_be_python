@@ -1,27 +1,29 @@
 #prompt for  single task
 
-task = str(input("Enter your task:"))
-priority = str(input("Priority (high/medium/low):"))
-time = str(input("Is it time-bound? yes/no:"))
+Task = str(input("Enter your task:"))
+Time_Bound = str(input("Is it time-bound?"))
+Priority = str(input("Priority (high/medium/low):"))
 
-match priority:
+
+
+match Priority:
     case "high":
-        if time_bound == 'yes':
-            print(f"{task}, is a {priority}, priority task that requires immediate attention today!")
+        if Time_Bound == 'yes':
+            print(f"{Task}, is a {Priority}, priority task that requires immediate attention today!")
         else:
-            print(f"{task}, is a {priority}, priority task consider completing it as soon as possible.")
+            print(f"{Task}, is a {Priority}, priority task consider completing it as soon as possible.")
     
     case "medium":    
-        if time_bound == 'yes': 
-            print(f"{task}, is a {priority}, priority task that requires immediate attention today!.")
+        if Time_Bound == 'yes': 
+            print(f"{Task}, is a {Priority}, priority task that requires immediate attention today!.")
         else: 
-            print(f"{task}, is a {priority}, priority task consider completing it as soon as possible.")
+            print(f"{Task}, is a {Priority}, priority task consider completing it as soon as possible.")
     
     case "low":
-        if time_bound == 'yes':
-            print(f"{task}, is a {priority}, priority task that requires immediate attention today!.")
+        if Time_Bound == 'yes':
+            print(f"{Task}, is a {Priority}, priority task that requires immediate attention today!.")
         else:
-            print(f"{task}, is a {priority}, priority task consider completing it when you have free time.")
+            print(f"{Task}, is a {Priority}, priority task consider completing it when you have free time.")
     case _:
         print("One or more inputs are invalid!")
 
