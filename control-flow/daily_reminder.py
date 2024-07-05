@@ -9,21 +9,21 @@ Priority = str(input("Priority (high/medium/low):"))
 match Priority:
     case "high":
         if Time_Bound == 'yes':
-            print(f"{Task}, is a {Priority}, priority task that requires immediate attention today!")
+            print(f"Reminder: {Task}, is a {Priority}, priority task that requires immediate attention today!")
         else:
-            print(f"{Task}, is a {Priority}, priority task consider completing it as soon as possible.")
+            print(f"Reminder: {Task}, is a {Priority}, priority task consider completing it as soon as possible.")
     
     case "medium":    
         if Time_Bound == 'yes': 
-            print(f"{Task}, is a {Priority}, priority task that requires immediate attention today!.")
+            print(f"NB: {Task}, is a {Priority}, priority task that requires immediate attention today!.")
         else: 
-            print(f"{Task}, is a {Priority}, priority task consider completing it as soon as possible.")
+            print(f"NB: {Task}, is a {Priority}, priority task consider completing it as soon as possible.")
     
     case "low":
         if Time_Bound == 'yes':
-            print(f"{Task}, is a {Priority}, priority task that requires immediate attention today!.")
+            print(f"Note:{Task}, is a {Priority}, priority task that requires immediate attention today!.")
         else:
-            print(f"{Task}, is a {Priority}, priority task consider completing it when you have free time.")
+            print(f"Note: {Task}, is a {Priority}, priority task consider completing it when you have free time.")
     case _:
         print("One or more inputs are invalid!")
 
