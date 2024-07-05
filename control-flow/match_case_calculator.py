@@ -1,0 +1,46 @@
+#simple calculator match case
+#ask user for input
+num1 = int(input("Enter the first number:"))
+num2 = int(input("Enter the second number:"))
+
+#ask for operation user wants
+operation = str(input("Choose the operation (+, -, *, /):"))
+
+#perform calculation
+match operation:                
+    case "+" :
+        result = num1 + num2
+        print(f"The result is {result}.")
+    
+    case "-" :
+        result = num1 - num2
+        print(f"The result is {result}.")
+    
+    case "*" :
+        result = num1 * num2
+        print(f"The result is {result}.")
+    
+    case "/" :
+            if num2 == 0 :
+                print("Cannot divide by zero.")
+            else:
+                result = num1 / num2
+                print(f"The result is {result}.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
