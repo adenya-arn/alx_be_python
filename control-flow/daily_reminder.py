@@ -1,7 +1,7 @@
 #prompt for  single task
 
 Task = str(input("Enter your task:"))
-Time_Bound = str(input("Is it time-bound?:"))
+Time_Bound = str(input("Is it time-bound? (yes/no):"))
 Priority = str(input("Priority (high/medium/low):"))
 
 
