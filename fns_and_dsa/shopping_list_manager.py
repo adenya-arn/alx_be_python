@@ -1,37 +1,42 @@
-def display_menu():
-    print("\nShopping List Manager")
-    print("1. Add Item")
-    print("2. Remove Item")
-    print("3. View List")
-    print("4. Exit")
+class ShoppingListManager:
+    def __init__(self):
+        self.shopping_list = []
 
-def main():
-    shopping_list = []
-    while True:
-        display_menu()
-        choice = input("Enter your choice: ")
+    def add_item(self, item):
+        self.shopping_list.append(item)
+        print(f"Added '{item}' to the shopping list.")
 
-        if choice == '1':
-            item = input("Enter the item to add: ")
-            shopping_list.append(item)
-            print(f"'{item}' has been added to the shopping list.")
-        elif choice == '2':
-            item = input("Enter the item to remove: ")
-            if item in shopping_list:
-                shopping_list.remove(item)
-                print(f"'{item}' has been removed from the shopping list.")
-            else:
-                print(f"'{item}' not found in the shopping list.")
-        elif choice == '3':
-            print("\nCurrent Shopping List:")
-            for idx, item in enumerate(shopping_list, start=1):
-                print(f"{idx}. {item}")
-        elif choice == '4':
-            print("Goodbye!")
-            break
+    def display_list(self):
+        if self.shopping_list:
+            print("Shopping List:")
+            for index, item in enumerate(self.shopping_list, start=1):
+                print(f"{index}. {item}")
         else:
-            print("Invalid choice. Please try again.")
+            print("Shopping List is empty.")
+
+    def main_menu(self):
+        print("Welcome to the Shopping List Manager!")
+
+        while True:
+            print("\nChoose an option:")
+            print("1. Add item to the shopping list")
+            print("2. Display shopping list")
+            print("3. Quit")
+
+            choice = input("Enter your choice (1/2/3): ").strip()
+
+            if choice == '1':
+                item = input("Enter the item to add: ").strip()
+                self.add_item(item)
+            elif choice == '2':
+                self.display_list()
+            elif choice == '3':
+                print("Thank you for using the Shopping List Manager!")
+                break
+            else:
+                print("Invalid choice. Please enter 1, 2, or 3.")
 
 if __name__ == "__main__":
-    main()
+    manager = ShoppingListManager()
+    manager.main_menu()
 
