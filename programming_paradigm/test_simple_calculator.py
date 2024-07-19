@@ -1,44 +1,73 @@
-# robust_division_calculator.py
+# simple_calculator.py
 
-def safe_divide(numerator, denominator):
-    try:
-        num = float(numerator)
-        den = float(denominator)
-        
-        if den == 0:
-            return "Error: Cannot divide by zero."
-        
-        result = num / den
-        return f"The result of the division is {result}"
-    
-    except ValueError:
-        return "Error: Please enter numeric values only."
+class SimpleCalculator:
+    """A simple calculator class that supports basic arithmetic operations."""
 
-# Testing the function directly
+    def add(self, a, b):
+        """Return the addition of a and b."""
+        return a + b
+
+    def subtract(self, a, b):
+        """Return the subtraction of b from a."""
+        return a - b
+
+    def multiply(self, a, b):
+        """Return the multiplication of a and b."""
+        return a * b
+
+    def divide(self, a, b):
+        """Return the division of a by b. Returns None if b is zero."""
+        if b == 0:
+            return None
+        return a / b
+
+
+
+# test_simple_calculator.py
+
+import unittest
+from simple_calculator import SimpleCalculator
+
+class TestSimpleCalculator(unittest.TestCase):
+
+    def setUp(self):
+        """Set up the SimpleCalculator instance before each test."""
+        self.calc = SimpleCalculator()
+
+    def test_addition(self):
+        """Test the addition method."""
+        self.assertEqual(self.calc.add(2, 3), 5)
+        self.assertEqual(self.calc.add(-1, 1), 0)
+        self.assertEqual(self.calc.add(-1, -1), -2)
+        self.assertEqual(self.calc.add(0, 0), 0)
+
+    def test_subtraction(self):
+        """Test the subtraction method."""
+        self.assertEqual(self.calc.subtract(5, 3), 2)
+        self.assertEqual(self.calc.subtract(3, 5), -2)
+        self.assertEqual(self.calc.subtract(-1, -1), 0)
+        self.assertEqual(self.calc.subtract(0, 0), 0)
+
+    def test_multiplication(self):
+        """Test the multiplication method."""
+        self.assertEqual(self.calc.multiply(2, 3), 6)
+        self.assertEqual(self.calc.multiply(-1, 1), -1)
+        self.assertEqual(self.calc.multiply(-1, -1), 1)
+        self.assertEqual(self.calc.multiply(0, 0), 0)
+
+    def test_division(self):
+        """Test the division method."""
+        self.assertEqual(self.calc.divide(6, 3), 2)
+        self.assertEqual(self.calc.divide(3, 2), 1.5)
+        self.assertEqual(self.calc.divide(-6, -3), 2)
+        self.assertEqual(self.calc.divide(0, 1), 0)
+        self.assertIsNone(self.calc.divide(1, 0), "Division by zero should return None")
+
+    def test_division_by_zero(self):
+        """Test division by zero edge case."""
+        self.assertIsNone(self.calc.divide(1, 0), "Division by zero should return None")
+        self.assertIsNone(self.calc.divide(0, 0), "Division of zero by zero should return None")
+
 if __name__ == "__main__":
-    print(safe_divide(10, 5))  # The result of the division is 2.0
-    print(safe_divide(10, 0))  # Error: Cannot divide by zero.
-    print(safe_divide("ten", 5))  # Error: Please enter numeric values only.
-
-
-
-
-# main.py
-
-import sys
-from robust_division_calculator import safe_divide
-
-def main():
-    if len(sys.argv) != 3:
-        print("Usage: python main.py <numerator> <denominator>")
-        sys.exit(1)
-
-    numerator = sys.argv[1]
-    denominator = sys.argv[2]
-
-    result = safe_divide(numerator, denominator)
-    print(result)
-
-if __name__ == "__main__":
-    main()
+    unittest.main()
 
