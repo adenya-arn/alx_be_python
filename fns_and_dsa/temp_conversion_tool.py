@@ -5,7 +5,7 @@ CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 print('Temp conversion tool')
 
 
-Temp = float(input('Enter the temperature to convert in numbers:'))
+Temp = float(input('Enter the temperature to convert:'))
 Measure = str(input('Is this temperature in Celsius or Fahrenheit? (C/F):').upper())
 
 
