@@ -4,7 +4,7 @@ FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 
 def convert_to_celsius(fahrenheit):
     return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
-
+'''
 def convert_to_fahrenheit(celsius):
     return celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + 32
 
@@ -26,9 +26,8 @@ def main():
         print("Invalid choice. Please enter 1 or 2.")
 
 if __name__ == "__main__":
-    main()
+    main() '''
 
-'''
 
 
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
