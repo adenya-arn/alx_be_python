@@ -50,10 +50,10 @@ def far_to_cel(F):
 
 
 if Measure == 'C':
-    new_temp = f'{Temp} {Measure} is {cel_to_far}°F'
+    new_temp = f'{Temp} {Measure} is {cel_to_far(Temp)}°F'
     print (new_temp)
 elif Measure == 'F':
-    new_temp = f'{Temp} {Measure} is {far_to_cel}°C'
+    new_temp = f'{Temp} {Measure} is {far_to_cel(Temp)}°C'
     print (new_temp)
 else:
     print('Invalid Temperature. Please enter a numeric value!!')
