@@ -6,7 +6,7 @@ print('Temp conversion tool')
 
 
 Temp = float(input('Enter the temperature to convert in numbers:'))
-Measure = str(input('Is this temperature in Celsius or Fahrenheit? (C/F)').upper())
+Measure = str(input('Is this temperature in Celsius or Fahrenheit? (C/F):').upper())
 
 
 
