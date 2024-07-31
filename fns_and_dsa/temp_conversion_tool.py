@@ -24,4 +24,4 @@ elif Measure == 'F':
     new_temp = f'{Temp} {Measure} is {far_to_cel(Temp)}°C'
     print (new_temp)
 else:
-    print('Invalid Temperature. Please enter a numeric value!!')
+    print('Invalid Temperature. Please enter a numeric value.')
