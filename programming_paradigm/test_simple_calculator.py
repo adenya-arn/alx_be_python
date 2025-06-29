@@ -18,11 +18,11 @@ class TestSimpleCalculator(unittest.TestCase):
         result2 = self.calc.subtract(-12, 10)
         self.assertEqual(result2, -22)
 
-    def test_divide(self):
+    def test_division(self):
         result = self.calc.divide(10, 5)
         self.assertEqual(result, 2)
 
-    def test_multiply(self):
+    def test_multiplication(self):
         result = self.calc.multiply(10, 10)
         self.assertEqual(result, 100)
         self.assertIsNone(self.calc.divide(5, 0))
